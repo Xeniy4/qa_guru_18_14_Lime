@@ -4,13 +4,14 @@ BUTTON_LK = '[arial-label="account-link"]'
 GENDER_WOMAN = '"Женщины"'
 BURGER_MENU = '.toolbar__main__logo .burger'
 
+#Написано
 class Authorization:
     def open(self):
         browser.open('/')
-# Нажать на кнопку Личный кабинет
+
     def open_lk(self):
         browser.element(BUTTON_LK).click()
-#Нажать на кнопку Войти или зарегистрироваться
+
     def click_button_enter(self):
         browser.element('.btn-primary').click()
 
@@ -23,7 +24,7 @@ class Authorization:
     def check_error_text_mobile(self,value):
         browser.element('.FormGroup__helper').should(have.text(value))
 
-
+#Написано
 class SelectShop:
     def open_lk(self):
         browser.element(BUTTON_LK).click()
@@ -60,6 +61,7 @@ class Subscribe:
     def check_error_subscribe(self,value):
         browser.element('.FormGroup__helper').should(have.text(value))
 
+#Написано
 class ShoppingCart:
     def open_burger_menu(self):
         browser.element(BURGER_MENU).click()
@@ -85,7 +87,7 @@ class ShoppingCart:
     def check_text_size(self,value):
         browser.element('.btn-cart._outline').should(have.text(value))
 
-
+#Написано
 class Search:
     def click_button_search(self):
         browser.element('.toolbar__main .SearchBox__button').click()
