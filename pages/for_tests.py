@@ -5,13 +5,16 @@ from selene.core.exceptions import TimeoutException
 from selene.support.conditions.have import texts
 
 BUTTON_LK = '[arial-label="account-link"]'
-GENDER_WOMAN = '"Женщины"'
+GENDER_WOMAN = 'women'
 BURGER_MENU = '.toolbar__main__logo .burger'
 
 #Написано
 class Authorization:
     def open(self):
         browser.open('/')
+
+    def open_favorites(self):
+        browser.open('/favorites')
 
     def open_lk(self):
         browser.element(BUTTON_LK).click()
@@ -53,13 +56,16 @@ class Subscribe:
     def click_button_subscribe(self):
         browser.element('.ModernFooter-subscribe__btn').click()
 
+    def accept_cookie(self):
+        browser.element('//div/button[contains(text(),"ok")]').click()
+
     def type_email(self,value):
         browser.element('#ssb_footer').type(value)
 
     def checkbox(self):
-        browser.element(f'.form-subscribe__container .checkbox__element[value="{GENDER_WOMAN}"]')
+        browser.element('//label/span[contains(text(),"Женщины")]').click()
 
-    def click_button_subscribe(self):
+    def click_button_subscribe_page_subscribe(self):
         browser.element('.form-subscribe__container .btn-block').click()
 
     def check_error_subscribe(self,value):
@@ -103,9 +109,9 @@ class Search:
         browser.element('.toolbar__main .SearchBox__input').type(value).press_enter()
 
     def select_product(self):
-        browser.element('.CatalogProduct__title [href="/ru_ru/product/23770_3594_753-sinii_zelenyi"]')
+        browser.element('.CatalogProduct__title [href="/ru_ru/product/23770_3594_753-sinii_zelenyi"]').click()
 #найти часть текста. Может тут нужен цикл? что в каждом елементе есть футболка
     def check_text(self,value):
-        browser.all('.CatalogProduct__title').first.shouldHave(texts(value))
+        browser.all('.CatalogProduct__title').first.should(have.text(value))
 
 
