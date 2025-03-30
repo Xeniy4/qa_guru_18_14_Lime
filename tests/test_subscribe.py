@@ -4,6 +4,7 @@ import allure
 auth = Authorization()
 subscribe = Subscribe()
 #Работает
+@allure.story('Проверка подписки в футере')
 def test_subscribe_footer():
     with allure.step('Открыть страницу Избранное'):
         auth.open_favorites()

@@ -6,6 +6,7 @@ select_shop = SelectShop()
 shopping_card = ShoppingCart()
 
 #работает
+@allure.story('Проверка поиска мконкретного магазина на странице Магазины')
 def test_select_specific_shop():
     with allure.step('Открыть главную страницу'):
         auth.open()
@@ -26,6 +27,7 @@ def test_select_specific_shop():
         select_shop.check_shop_name('ТРЦ «ОСТРОВА»')
 
 #Работает
+@allure.story('Проверка функционала поиска и добавления товара в Избранное через фильтр')
 def test_add_favorites():
     with allure.step('Открыть главную страницу'):
         auth.open()

@@ -4,6 +4,7 @@ import allure
 
 auth = Authorization()
 #работает
+@allure.story('Проверка авторизации с невалидным номером телефона')
 def test_auth(browser_manager):
     with allure.step('Открыть главную страницу'):
         auth.open()
