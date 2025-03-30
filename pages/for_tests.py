@@ -1,4 +1,7 @@
+from shutil import ignore_patterns
+
 from selene import browser, have
+from selene.core.exceptions import TimeoutException
 
 BUTTON_LK = '[arial-label="account-link"]'
 GENDER_WOMAN = '"Женщины"'
