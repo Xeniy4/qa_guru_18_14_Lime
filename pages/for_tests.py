@@ -2,6 +2,7 @@ from shutil import ignore_patterns
 
 from selene import browser, have
 from selene.core.exceptions import TimeoutException
+from selene.support.conditions.have import texts
 
 BUTTON_LK = '[arial-label="account-link"]'
 GENDER_WOMAN = '"Женщины"'
@@ -33,7 +34,7 @@ class SelectShop:
         browser.element(BUTTON_LK).click()
 
     def click_shops(self):
-        browser.element('.AccountMenu__Item [href="/ru_ru/about"]').click()
+        browser.element('.AccountMenu__Item [href="/ru_ru/shops"]').click()
 
     def click_dropdown(self):
         browser.element('.DropdownList__header').click()
@@ -41,8 +42,8 @@ class SelectShop:
     def select_city(self, value):
         browser.element(f'//div/span[contains(text(),"{value}")]').click()
 
-    def select_gender(self):
-        browser.element(f'//label/span[contains(text(),"{GENDER_WOMAN}")]').click()
+    # def select_gender(self):
+    #     browser.element(f'//label/span[contains(text(),"{GENDER_WOMAN}")]').click()
 
     def check_shop_name(self,value):
         browser.element('.text--uppercase').should(have.text(value))
@@ -84,11 +85,14 @@ class ShoppingCart:
     def select_product(self):
         browser.element('.CatalogProduct__title').click()
 
-    def click_add_cart(self):
-        browser.element('.btn-cart').click()
+    def click_add_favourites(self):
+        browser.element('.actions__fav .SvgIcon').click()
 
-    def check_text_size(self,value):
-        browser.element('.btn-cart._outline').should(have.text(value))
+    def click_favorites(self):
+        browser.element('.btn-control [alt="Избранное"]').click()
+
+    def check_text_favorites(self,value):
+        browser.element('.PreviewProduct__text--line-clamp-2').should(have.text(value))
 
 #Написано
 class Search:
@@ -100,13 +104,8 @@ class Search:
 
     def select_product(self):
         browser.element('.CatalogProduct__title [href="/ru_ru/product/23770_3594_753-sinii_zelenyi"]')
-
+#найти часть текста. Может тут нужен цикл? что в каждом елементе есть футболка
     def check_text(self,value):
-        browser.element(f'//div/h1[contains(text(),"{value}")]').should(have.text(value))
-
-
-
-
- #   browser.element()
+        browser.all('.CatalogProduct__title').first.shouldHave(texts(value))
 
 

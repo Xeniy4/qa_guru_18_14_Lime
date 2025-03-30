@@ -3,7 +3,7 @@ from pages.for_tests import Authorization
 import allure
 
 auth = Authorization()
-
+#работает
 def test_auth(browser_manager):
     with allure.step('Открыть главную страницу'):
         auth.open()
