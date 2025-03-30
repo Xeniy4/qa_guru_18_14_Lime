@@ -112,6 +112,6 @@ class Search:
         browser.element('.CatalogProduct__title [href="/ru_ru/product/23770_3594_753-sinii_zelenyi"]').click()
 #найти часть текста. Может тут нужен цикл? что в каждом елементе есть футболка
     def check_text(self,value):
-        browser.all('.CatalogProduct__title').first.should(have.text(value))
+        browser.all('.CatalogProduct__title')[0].should(have.text(value))
 
 

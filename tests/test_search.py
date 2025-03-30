@@ -3,7 +3,7 @@ import allure
 
 auth = Authorization()
 search = Search()
-# не работает в конце, где надо найти текст футболки
+#работает
 def test_search_product():
     with allure.step('Открыть главную страницу'):
         auth.open()
@@ -18,4 +18,4 @@ def test_search_product():
     #     search.select_product()
 
     with allure.step('Проверка отображения текста товара'):
-        search.check_text('Футболка')
+        search.check_text('ФУТБОЛКА')
