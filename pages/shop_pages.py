@@ -1,14 +1,12 @@
-from shutil import ignore_patterns
 
 from selene import browser, have
-from selene.core.exceptions import TimeoutException
+
 from selene.support.conditions.have import texts
 
 BUTTON_LK = '[arial-label="account-link"]'
 GENDER_WOMAN = 'women'
 BURGER_MENU = '.toolbar__main__logo .burger'
 
-#Написано
 class Authorization:
     def open(self):
         browser.open('/')
@@ -31,7 +29,7 @@ class Authorization:
     def check_error_text_mobile(self,value):
         browser.element('.FormGroup__helper').should(have.text(value))
 
-#Написано
+
 class SelectShop:
     def open_lk(self):
         browser.element(BUTTON_LK).click()
@@ -71,7 +69,7 @@ class Subscribe:
     def check_error_subscribe(self,value):
         browser.element('.FormGroup__helper').should(have.text(value))
 
-#Написано
+
 class ShoppingCart:
     def open_burger_menu(self):
         browser.element(BURGER_MENU).click()
@@ -100,7 +98,7 @@ class ShoppingCart:
     def check_text_favorites(self,value):
         browser.element('.PreviewProduct__text--line-clamp-2').should(have.text(value))
 
-#Написано
+
 class Search:
     def click_button_search(self):
         browser.element('.toolbar__main .SearchBox__button').click()
@@ -110,7 +108,7 @@ class Search:
 
     def select_product(self):
         browser.element('.CatalogProduct__title [href="/ru_ru/product/23770_3594_753-sinii_zelenyi"]').click()
-#найти часть текста. Может тут нужен цикл? что в каждом елементе есть футболка
+
     def check_text(self,value):
         browser.all('.CatalogProduct__title')[0].should(have.text(value))
 

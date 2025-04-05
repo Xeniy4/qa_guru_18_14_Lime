@@ -1,9 +1,9 @@
-from pages.for_tests import Authorization, Subscribe
+from pages.shop_pages import Authorization, Subscribe
 import allure
 
 auth = Authorization()
 subscribe = Subscribe()
-#Работает
+
 @allure.story('Проверка подписки в футере')
 def test_subscribe_footer():
     with allure.step('Открыть страницу Избранное'):

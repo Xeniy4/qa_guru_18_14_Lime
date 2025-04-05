@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 
 logger = logging.getLogger(__name__)
 
-from Utils import attach
+from utils import attach
 
 load_dotenv()
 

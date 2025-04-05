@@ -1,11 +1,11 @@
-from pages.for_tests import Authorization,SelectShop, ShoppingCart
+from pages.shop_pages import Authorization,SelectShop, ShoppingCart
 import allure
 
 auth = Authorization()
 select_shop = SelectShop()
 shopping_card = ShoppingCart()
 
-#работает
+
 @allure.story('Проверка поиска мконкретного магазина на странице Магазины')
 def test_select_specific_shop():
     with allure.step('Открыть главную страницу'):
@@ -26,7 +26,7 @@ def test_select_specific_shop():
     with allure.step('Проверка отображения магазина'):
         select_shop.check_shop_name('ТРЦ «ОСТРОВА»')
 
-#Работает
+
 @allure.story('Проверка функционала поиска и добавления товара в Избранное через фильтр')
 def test_add_favorites():
     with allure.step('Открыть главную страницу'):
