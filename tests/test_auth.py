@@ -3,8 +3,6 @@ import pytest
 from pages.shop_pages import Authorization
 import allure
 
-auth = Authorization()
-
 @pytest.fixture
 def auth_page():
     yield Authorization()
