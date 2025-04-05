@@ -11,10 +11,10 @@ def test_select_specific_shop():
     with allure.step('Открыть главную страницу'):
         auth.open()
 
-    with allure.step('Нажать на кнопку Личный кабинет'):
+    with allure.step('Нажать на кнопку "Личный кабинет"'):
         auth.open_lk()
 
-    with allure.step('Нажать на кнопку Магазины'):
+    with allure.step('Нажать на кнопку "Магазины"'):
         select_shop.click_shops()
 
     with allure.step('Нажать на выпадающий список магазинов'):
@@ -32,13 +32,13 @@ def test_add_favorites():
     with allure.step('Открыть главную страницу'):
         auth.open()
 
-    with allure.step('Нажать на Бургер меню'):
+    with allure.step('Нажать на "Бургер меню"'):
         shopping_card.open_burger_menu()
 
-    with allure.step('Нажать на Новинки'):
+    with allure.step('Нажать на "Новинки"'):
         shopping_card.click_novelties()
 
-    with allure.step('Нажать на Фильтр'):
+    with allure.step('Нажать на "Фильтр"'):
         shopping_card.open_filter()
 
     with allure.step('Нажать на цвет'):
@@ -50,10 +50,10 @@ def test_add_favorites():
     with allure.step('Нажать на товар'):
         shopping_card.select_product()
 
-    with allure.step('Нажать на добавить в Избранное'):
+    with allure.step('Нажать на кнопку "Добавить в Избранное"'):
         shopping_card.click_add_favourites()
 
-    with allure.step('Нажать на Избранное'):
+    with allure.step('Нажать на "Избранное"'):
         shopping_card.click_favorites()
 
     with allure.step('Проверить отображение добавленного товара'):

@@ -7,16 +7,16 @@ def test_auth_no_valid_mobile(auth_page):
     with allure.step('Открыть главную страницу'):
         auth_page.open()
 
-    with allure.step('Нажать на кнопку Личный кабинет'):
+    with allure.step('Нажать на кнопку "Личный кабинет"'):
         auth_page.open_lk()
 
-    with allure.step('Нажать на кнопку Войти или зарегистрироваться'):
+    with allure.step('Нажать на кнопку "Войти или зарегистрироваться"'):
         auth_page.click_button_enter()
 
     with allure.step('Ввести невалидный номер телефона'):
         auth_page.type_mobile('58458456215')
 
-    with allure.step('Нажать на кнопку Получить код'):
+    with allure.step('Нажать на кнопку "Получить код"'):
         auth_page.click_button_det_code()
 
     with allure.step('Проверка текста ошибки: "Некорректный номер телефона"'):
