@@ -1,7 +1,6 @@
 
 from selene import browser, have
 
-from selene.support.conditions.have import texts
 
 BUTTON_LK = '[arial-label="account-link"]'
 GENDER_WOMAN = 'women'

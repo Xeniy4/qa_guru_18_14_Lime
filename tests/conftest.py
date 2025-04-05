@@ -26,7 +26,7 @@ def selenoid():
         "browserName": "chrome",
         "browserVersion": "127.0",
         "selenoid:options": {
-            # "enableVNC": True,
+            "enableVNC": True,
             "enableVideo": True
         }
     }
@@ -57,8 +57,3 @@ def browser_manager():
     browser.config.timeout = 150
     yield
     browser.quit()
-
-
-@pytest.fixture
-def auth_page():
-    yield Authorization()
