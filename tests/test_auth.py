@@ -6,7 +6,7 @@ import allure
 auth = Authorization()
 
 @pytest.fixture
-def auth_page(browser_manager):
+def auth_page():
     yield Authorization()
 
 @allure.story('Проверка авторизации с невалидным номером телефона')
