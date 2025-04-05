@@ -6,7 +6,7 @@ select_shop = SelectShop()
 shopping_card = ShoppingCart()
 
 
-@allure.story('Проверка поиска мконкретного магазина на странице Магазины')
+@allure.story('Проверка поиска конкретного магазина на странице Магазины')
 def test_select_specific_shop():
     with allure.step('Открыть главную страницу'):
         auth.open()
@@ -42,7 +42,7 @@ def test_add_favorites():
         shopping_card.open_filter()
 
     with allure.step('Нажать на цвет'):
-        shopping_card.select_color('оливковый')
+        shopping_card.select_color('черный')
 
     with allure.step('Закрыть фильтр'):
         shopping_card.close_filter()
@@ -57,6 +57,6 @@ def test_add_favorites():
         shopping_card.click_favorites()
 
     with allure.step('Проверить отображение добавленного товара'):
-        shopping_card.check_text_favorites('ФУТБОЛКА')
+        shopping_card.check_text_favorites('ЮБКА')
 
 

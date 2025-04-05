@@ -87,7 +87,7 @@ class ShoppingCart:
         browser.element('.IButtonClose').click()
 
     def select_product(self):
-        browser.element('.CatalogProduct__title').click()
+        browser.all('.CatalogProduct__title')[0].click()
 
     def click_add_favourites(self):
         browser.element('.actions__fav .SvgIcon').click()
@@ -96,7 +96,7 @@ class ShoppingCart:
         browser.element('.btn-control [alt="Избранное"]').click()
 
     def check_text_favorites(self,value):
-        browser.element('.PreviewProduct__text--line-clamp-2').should(have.text(value))
+        browser.all('.PreviewProduct__text--line-clamp-2')[0].should(have.text(value))
 
 
 class Search:
