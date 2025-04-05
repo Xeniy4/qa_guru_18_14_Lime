@@ -24,7 +24,7 @@ def selenoid():
         "browserName": "chrome",
         "browserVersion": "127.0",
         "selenoid:options": {
-            "enableVNC": True,
+            # "enableVNC": True,
             "enableVideo": True
         }
     }
@@ -52,6 +52,6 @@ def browser_manager():
     browser.config.base_url = "https://lime-shop.com/ru_ru"
     browser.config.window_width = 1920
     browser.config.window_height = 1080
-    browser.config.timeout = 200
+    browser.config.timeout = 120
     yield
     browser.quit()
