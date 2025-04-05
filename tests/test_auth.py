@@ -1,11 +1,6 @@
-import pytest
 
-from pages.shop_pages import Authorization
 import allure
 
-@pytest.fixture
-def auth_page():
-    yield Authorization()
 
 @allure.story('Проверка авторизации с невалидным номером телефона')
 def test_auth_no_valid_mobile(auth_page):

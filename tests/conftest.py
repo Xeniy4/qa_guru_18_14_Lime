@@ -7,6 +7,8 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+from pages.shop_pages import Authorization
+
 logger = logging.getLogger(__name__)
 
 from utils import attach
@@ -55,3 +57,8 @@ def browser_manager():
     browser.config.timeout = 120
     yield
     browser.quit()
+
+
+@pytest.fixture
+def auth_page():
+    yield Authorization()
