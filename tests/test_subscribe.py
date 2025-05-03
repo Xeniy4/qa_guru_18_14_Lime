@@ -4,6 +4,8 @@ import allure
 auth = Authorization()
 subscribe = Subscribe()
 
+
+@allure.epic("Web UI тесты")
 @allure.story('Проверка подписки в футере')
 def test_subscribe_footer():
     with allure.step('Открыть страницу "Избранное"'):

@@ -4,6 +4,7 @@ import allure
 auth = Authorization()
 search = Search()
 
+@allure.epic("Web UI тесты")
 @allure.story('Проверка поиска товара')
 def test_search_product():
     with allure.step('Открыть главную страницу'):
