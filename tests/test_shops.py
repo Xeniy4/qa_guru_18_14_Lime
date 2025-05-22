@@ -62,3 +62,6 @@ def test_add_favorites():
         shopping_card.check_text_favorites('ЮБКА')
 
 
+
+
+

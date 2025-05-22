@@ -18,3 +18,6 @@ def test_search_product():
 
     with allure.step('Проверка отображения текста товара'):
         search.check_text('ФУТБОЛКА')
+
+
+
